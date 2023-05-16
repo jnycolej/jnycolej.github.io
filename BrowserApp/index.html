@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Foldit">
+    <link rel="stylesheet" href="styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+  </head>
+  <body class="bg-secondary p-2 text-dark">
+    <header>
+      <h1>Calculator</h1>
+      <h3>Type your calculation or use the calculator below.</h3>
+    </header>
+    <input type="text" id="calculation" class="mb-2">
+    <div  class="main-calc"> 
+        <table class="m-2">
+            <tr>
+                <td><input type="button" class="btn btn-light" value="7" onclick="appendToCalculation('7')"></td>
+                <td><input type="button" class="btn btn-light" value="8" onclick="appendToCalculation('8')"></td>
+                <td><input type="button" class="btn btn-light" value="9" onclick="appendToCalculation('9')"></td>
+                <td><input type="button" class="btn btn-light" value="+" onclick="appendToCalculation('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn btn-light" value="6" onclick="appendToCalculation('6')"></td>
+                <td><input type="button" class="btn btn-light" value="5" onclick="appendToCalculation('5')"></td>
+                <td><input type="button" class="btn btn-light" value="4" onclick="appendToCalculation('4')"></td>
+                <td><input type="button" class="btn btn-light" value="-" onclick="appendToCalculation('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn btn-light" value="1" onclick="appendToCalculation('1')"></td>
+                <td><input type="button" class="btn btn-light" value="2" onclick="appendToCalculation('2')"></td>
+                <td><input type="button" class="btn btn-light" value="3" onclick="appendToCalculation('3')"></td>
+                <td><input type="button" class="btn btn-light" value="*" onclick="appendToCalculation('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn btn-light" value="0" onclick="appendToCalculation('0')"></td>
+                <td><input type="button" class="btn btn-light" value="." onclick="appendToCalculation('.')"></td>
+                <td><input type="button" id = "clearButton" class="btn btn-light" value="C" onclick="clearCalculation()"></td>
+                <td><input type="button" class="btn btn-light" value="/" onclick="appendToCalculation('/')"></td>
+            </tr>
+            <tr>
+                <td><input style="width:150px;" type="button" value="=" id="submit" class="btn btn-primary mt-2"></td>
+            </tr>
+        </table>
+        <p id="answerView"></p>
+
+    </div>
+    <div class="pt-2">
+        <button id="clearHist" class="btn btn-danger">Clear History</button>
+        <hr>
+        <h5>Calculation History:</h5>   
+        <ul id="history"></ul>     
+    </div>
+    <script src="scripts/calculator.js"></script>
+    <script src="scripts/controllers.js"></script>
+  </body>
+</html>
