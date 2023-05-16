@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+    </head>
+    <body>
+        <p>The horse is not familiar with you and therefore won't let you mount it without making noise.</p>
+        <h4>What do you do?</h4>
+        <ul>
+            <li><a id='forceHorse' href='#' onclick='die()'>Force the horse to let you on</a></li>
+            <li><a id='charmHorse' href='charmHorse.html'>Charm the horse</a></li>
+        </ul>
+        <p> <a id='exit' href='thewall.html'>Exit</a></p>
+        <p> <a id='marketplace' href='marketplace.html'>Marketplace</a></p>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 with=125></iframe>
+        <script>
+            inventory.src += location.search;   //append queryString to iframe URL
+            exit.href += location.search;       //append queryString to exit href
+            charmHorse.html += location.search;     //append queryString to charmHorse href
+
+            //function to overwrite the HTML document's body with new HTML elements
+            function die(){
+                document.body.innerHTML = (
+                    `<h1>You Die</h1>
+                    <p>The lord commander catches you do to 
+                        the horse struggling. 
+                        You are found guilty of breaking your 
+                        oath and now your watch has ended.
+                    </p>
+                    <a href='index.html'> <h4> Game Over </h4></a>`
+                );
+            }
+        </script>   
+    </body>
+</html>

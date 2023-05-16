@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+    </head>
+    <body>
+        <h1>The Long Night Battle</h1>
+        <hr>
+        <p id="battleText">The battle has finally begun! You are surrounded by White Walkers!</p>
+        <h4>What do you do?</h4>
+        <div id='options'>
+            <button id='fight' onclick='attack()'> Fight </button>
+            <a id="winterfellCrypts" href="winterfellCrypts.html">
+                <button>Hide in the Crypts</button>
+            </a>
+        </div>
+        <hr>
+        <iframe src='inventory.html' id='inventory' height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            winterfellCrypts.href += location.search;
+
+            var queryString = new URLSearchParams(location.search);
+            var coins = +queryString.get("coins");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var whiteWalkerHP = 10, whiteWalkerAP = 2;
+
+            function attack(){
+                whiteWalkerAP -= ap;
+                if(whiteWalkerHP <= 0){
+                    battle.src = 'assets/';
+                    queryString.set('coins', coins+5);
+                    queryString.set('hp', hp);
+                    inventory.src = 'inventory.html?'+queryString;
+                    battleText.innerHTML = `You defeated the white walkers and find 5 gold`
+                    options.innerHTML = `<a href='winterfellCrypts.html?${queryString}'><button>Go Hide</button></a>`
+                }
+                else{
+                    hp -= whiteWalkerAP
+                    queryString.set('hp', hp);
+                    inventory.src = 'inventory.html?'+queryString;
+                    battleText.innerHTML = `You hit for ${ap} damage, it has ${whiteWalkerHP}hp left.<br> You take ${whiteWalkerAP} damage.`
+                }
+                if(hp <= 0){
+                    battleText.innerHTML = `You Died.`
+                    options.innerHTML = `<a href='index.html'><button>Game Over</button></a>`
+                }
+            }
+        </script>
+    </body>
+</html>

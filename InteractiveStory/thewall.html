@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather"/>
+
+    </head>
+    <body class="thewall">
+        <h1>The Wall</h1>
+        <hr>
+        <img src='assets/thewall.png'>
+        <p>You decide to join the Night's Watch and travel north to the Wall. 
+            After enduring rigorous training, you finally become a full-fledged 
+            member of the Watch. <br> As the winter draws nearer, the threat of the 
+            White Walkers looms larger than ever.
+        </p>
+        <h4>Will you:</h4>
+        <ul>
+            <li>
+                <a id='helpTheWall' href='battle.html'>
+                    Participate in the Great War and fight alongside Jon Snow and Daenerys Targaryen to defeat the White Walkers?
+                </a>
+            </li>
+            <li>
+                <a id='desertTheWatch' href="desertWatch.html">
+                    Desert the Night's Watch and flee south to avoid the danger?
+                </a>
+            </li>
+        </ul>
+        <p>
+            <a id='exit' href='overworld.html'>Exit</a>
+        </p>
+        <hr>
+        <iframe src='inventory.html' id='inventory' height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;       //append queryString to iframe URL
+            exit.href += location.search;           //append queryString to exit href
+            helpTheWall.href += location.search;          //append queryString to helpTheWall href
+            desertTheWatch.href += location.search;        //append queryString to desertTheWatch href
+        </script>
+    </body>
+</html>

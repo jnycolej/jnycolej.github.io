@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> Game of Thrones Adventure Game </title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body class="kingslanding-background">
+        <h1>Seven Kingdoms</h1>
+        <hr>
+        <img src='assets/overworld.png' width="480"/>
+        <h4>Which path do you want to take?</h4>
+        <ul class="kingslanding">
+            <li> <a id='thewall' href='thewall.html'> The Wall - Join the Watch </a> </li>
+            <li> <a id='winterfell' href='winterfell.html'> Winterfell - Join the Starks</a></li>
+            <li> <a id='kingslanding' href='kingslanding.html'>King's Landing - Join the Lanisters</a></li> 
+        </ul>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=150></iframe>
+        <script>
+            inventory.src += location.search;       //concat the search parameter to the iframe's src attributes
+            shoppe.href += location.search;         //concat the search parameter to the anchor's href attribute
+            winterfell.href += location.search;     //concat the search parameter to the anchor's href attribute
+            thewall.href += location.search;        //concat the search parameter to the anchor's href attribute
+            kingslanding.href += location.search;   //concat the search parameter to the anchor's href attribute
+        </script>
+    </body>
+</html>

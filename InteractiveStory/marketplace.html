@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+    </head>
+    <body>
+        <h1>Marketplace</h1>
+        <h4>What can I get you?</h4>
+        <div>
+            <button onclick='food()'> Food &#129365; <br> <i>1 gold coin</i></button>
+            <button onclick='weapon()'>Attack &#128481; <br> <i>5 gold coins</i></button>
+        </div>
+        <div> <a id='exit' href='overworld.html'>Exit</a></div>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            //concat search params to hrefs
+            inventory.src += location.search;
+            exit.href += location.search;
+
+            //Use URLSearchParams class to get the values
+            var queryString = new URLSearchParams(location.search);
+            var coins = +queryString.get("coins");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var food = +queryString.get("food");
+
+            function food(){
+                if(coins > 0){
+                    queryString.set('coins', coin-1);
+                    queryString.set('hp', hp+1);
+                    location.search = queryString;
+                }
+            }
+
+            function weapon(){
+                if (coins >= 5){
+                    queryString.set('coins', coins-5);
+                    queryString.set('ap', ap+1);
+
+                }
+            }
+        </script>
+    </body>
+</html>

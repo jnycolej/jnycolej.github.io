@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+        <link rel="icon" href="assets/dragon-logo.png"/>
+    </head>
+    <body>
+        <h1>Stables</h1>
+        <a id='horse' href='#'>
+            <img id='horseImage' onclick='charmHorse()' src="assets/horse.png" width="240">
+        </a>
+        <p id='textbox'>The horse is wary maybe you have something the horse would like to calm him down</p>
+        <div> <a id='exit' href='thewall.html'>Exit to Wall</a></div>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            exit.href += location.search;
+
+            var queryString = new URLSearchParams(location.search);
+            var food = +queryString.get("food");
+
+            function charmHorse(){
+                if(horseImage.src.includes('rideHorse')){
+                    horse.href = 'escapeNorth.html?'+queryString;
+                }
+                else if(food > 0){
+                    horseImage.src='assets/rideHorse.png'
+                    textbox.innerHTML = `You managed to sneak out of the watch without alerting anyone.`
+                    queryString.set('food', food--);
+                    inventory.src = 'inventory.html?'+queryString;
+                    document.body.innerHTML = (
+                        `<a href='kingslanding.html'><h4>Continue</h4></a>`
+                    );
+                }
+                else {
+                    textbox.innerHTML = `The horse is not budging`;
+                }
+            }
+        </script>
+
+    </body>
+</html>

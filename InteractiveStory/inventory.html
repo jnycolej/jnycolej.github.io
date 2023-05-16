@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Game of Thrones Adventure Game</title>
+
+    </head>
+    <body>
+        Inventory: <hr>
+        <table>
+            <tr>
+                <th> &#128176; </th>
+                <th> &#128156; </th>
+                <th> &#128481; </th>
+                <th> &#129365; </th>
+            </tr>
+            <tr>
+                <td id='coins'>200</td>
+                <td id='hp'>0</td>
+                <td id='ap'>0</td>
+                <td id='food'>5</td>
+            </tr>
+        </table>
+        <script>
+            var queryString = new URLSearchParams(location.search);
+            gp.innerText = queryString.get("gp");
+            hp.innerText = queryString.get("hp");
+            ap.innerText = queryString.get("ap");
+            food.innerText = queryString.get("food");
+        </script>
+    </body>
+</html>
