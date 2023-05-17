@@ -1,0 +1,3 @@
+[submodule "RestClientApp"]
+	path = RestClientApp
+	url = https://github.com/jnycolej/RESTClientApp
