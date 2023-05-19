@@ -1,3 +1,6 @@
 [submodule "RestClientApp"]
 	path = RestClientApp
 	url = https://github.com/jnycolej/RESTClientApp
+[submodule "BrowserApp"]
+	path = BrowserApp
+	url = https://github.com/jnycolej/calculator
