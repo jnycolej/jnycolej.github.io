@@ -1,5 +1,0 @@
-initControls();
-
-function initControls(){
-    
-}
