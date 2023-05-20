@@ -49,7 +49,20 @@ Winning and Losing: Gain insights into different scenarios for determining wins,
     </ul>
     <hr>
     <h3>Implementation of a Blackjack Game:</h3>
-Code Overview: Explore the HTML, CSS, and JavaScript code snippets provided in the article.
+    <h4>Code Overview</h4>
+        <p>
+            When coding for this project I went with a simplistic CSS/Bootstrap design because I wanted to focus on the actual gameplay.
+            The code for this project is mainly written in JavaScript with HTML being used for the main page and in event handlers to relay
+            crucial game infomation. When implementing the buttons I relied on innerHTML in order for the page to respond to clicks that the user
+            commits during the gameplay instead of using a separate view.js file.
+        </p>
+        <p>
+            All of the gameplay code is located in round.js. This file is initiated whenever the user loads or reloads the website. Once initiated the program uses Fetch API to
+            retrieve a shuffled deck of cards from the Deck of Cards API (https://deckofcardsapi.com) and deal to the dealer and the player. When programming the game initially
+            I had both cards showing for the dealer and the player. However, this wasnt ideal as traditionally the dealer's second card is hidden until the player stands.
+            In order to simulate this gameplay I dealt the dealer one card while dealing the player two cards. This allowed the game to resemble the traditional gameplay seen in real life.
+        </p>
+        <img src="../assets/deal-code.png">
 Game Features: Summarize the key features of the implemented blackjack game, including the ability to start a new game, receive cards from a shuffled deck, calculate hand values, and determine the winner based on the rules.
 User Interaction: Highlight the user interface elements, such as buttons for hitting and standing, displaying the dealer's and player's cards, and presenting game messages.
 Card API Integration: Explain the integration of a card API (Deck of Cards API) to fetch and display the card images in the game.
