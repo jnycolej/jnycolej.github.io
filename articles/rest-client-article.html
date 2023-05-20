@@ -15,6 +15,7 @@
     <div class="d-flex justify-content-center">
         <img class="position-absolute w-auto h-auto" src='../assets/bg-image2.jpg'>
     </div>
+    <div class="position-relative text-light container text-center h-100 d-flex flex-column justify-content-center">
     <h1>Mastering the Basics of Blackjack: Rules, Tips, and a Game Implementation</h1>
     <hr>
     <h3>Introduction</h3>
@@ -47,79 +48,80 @@
 Dealer's Turn: Discover the house rules that dictate the dealer's actions, including hitting on hand totals of 16 or less and standing on hand totals of 17 or more.
         </li>
         <li>
-Winning and Losing: Gain insights into different scenarios for determining wins, losses, and ties, including busts, natural blackjack, and comparing hand totals.
-        </li>
-    </ul>
-    <hr>
-    <h3>Implementation of a Blackjack Game:</h3>
-    <h4>Code Overview</h4>
-        <p>
-            When coding for this project I went with a simplistic CSS/Bootstrap design because I wanted to focus on the actual gameplay.
-            The code for this project is mainly written in JavaScript with HTML being used for the main page and in event handlers to relay
-            crucial game infomation. When implementing the buttons I relied on innerHTML in order for the page to respond to clicks that the user
-            commits during the gameplay instead of using a separate view.js file.
-        </p>
-        <p>
-            All of the gameplay code is located in round.js. This file is initiated whenever the user loads or reloads the website. Once initiated the program uses Fetch API to
-            retrieve a shuffled deck of cards from the Deck of Cards API (<a href="https://deckofcardsapi.com">https://deckofcardsapi.com</a>) and deal to the dealer and the player. When programming the game initially
-            I had both cards showing for the dealer and the player. However, this wasnt ideal as traditionally the dealer's second card is hidden until the player stands.
-            In order to simulate this gameplay I dealt the dealer one card while dealing the player two cards. This allowed the game to resemble the traditional gameplay seen in real life.
-        </p>
-        <img src="../assets/deal-code.png" style="height: 150; width: 400;">
-    <h4>Game Features</h4>
-        <ul>
-            <li>Starting a New Game</li>
-            <li>Recieving Cards From Deck</li>
-            <li>Calculating Hand Values</li>
-            <li>Determining the winner</li>
-        </ul>
-    <h4>User Interaction</h4>
-        <ul>
-            <li>Buttons (Hitting and Standing)</li>
-            <li>Displaying Cards</li>
-            <li>Game Messages</li>
-        </ul>
-    <h4>API Integration</h4>
-        <p>Explain the integration of a card API (Deck of Cards API) 
-            to fetch and display the card images in the game.
-        </p>
-    <h4>Game Flow</h4>
-        <ol>
-            <li>The initial game loads immediately upon the window loading</li>
-            <li>The dealer is dealt one card and the player is dealt two</li>
-            <li>
-                The player has to decide whether to hit or not
-                <ul>
-                    <li>If the player hits another card is drawn 
-                        from the deck and their hand total is increased.
-                        <ul>
-                            <li>If the player gets 21 then they win</li>
-                            <li>If the player goes over 21 then the lose (or bust)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        If the player stands then the dealer begins to draw cards. The dealer draws until they reach 17 or 21.
-                        <ul>
-                            <li>If the dealer is at 17 they stay</li>
-                            <li>If the dealer is at 21 they win</li>
-                            <li>If the dealer is under 17 they must draw until they are over 17</li>
-                        </ul>
-                    </li>
-                </ul>
+    Winning and Losing: Gain insights into different scenarios for determining wins, losses, and ties, including busts, natural blackjack, and comparing hand totals.
             </li>
-            <li>After the dealer recieves all their cards and they havent bust or hit 21 then the players hand and the 
-                dealers hands are compared. Whichever one has the most value wins.
-            </li>
-            <li>If the player wishes to play again they click the new game button</li>
-        </ol>
-    <h4>Conclusion</h4>
-        <p>
-            Mastering the basics of blackjack is a rewarding journey for both casual 
-            players and enthusiasts. By understanding the rules, implementing effective
-            strategies, and leveraging practical tips, you can elevate your blackjack skills
-            and increase your chances of success at the tables. Additionally, the showcased
-            implementation of a blackjack game provides a hands-on demonstration of the game 
-            mechanics and serves as an enjoyable learning experience. So, embrace the excitement
-             of blackjack, apply your knowledge, and aim for that winning hand!
-        </p>
+        </ul>
+        <hr>
+        <h3>Implementation of a Blackjack Game:</h3>
+        <h4>Code Overview</h4>
+            <p>
+                When coding for this project I went with a simplistic CSS/Bootstrap design because I wanted to focus on the actual gameplay.
+                The code for this project is mainly written in JavaScript with HTML being used for the main page and in event handlers to relay
+                crucial game infomation. When implementing the buttons I relied on innerHTML in order for the page to respond to clicks that the user
+                commits during the gameplay instead of using a separate view.js file.
+            </p>
+            <p>
+                All of the gameplay code is located in round.js. This file is initiated whenever the user loads or reloads the website. Once initiated the program uses Fetch API to
+                retrieve a shuffled deck of cards from the Deck of Cards API (<a href="https://deckofcardsapi.com">https://deckofcardsapi.com</a>) and deal to the dealer and the player. When programming the game initially
+                I had both cards showing for the dealer and the player. However, this wasnt ideal as traditionally the dealer's second card is hidden until the player stands.
+                In order to simulate this gameplay I dealt the dealer one card while dealing the player two cards. This allowed the game to resemble the traditional gameplay seen in real life.
+            </p>
+            <img src="../assets/deal-code.png" style="height: 150; width: 400;">
+        <h4>Game Features</h4>
+            <ul>
+                <li>Starting a New Game</li>
+                <li>Recieving Cards From Deck</li>
+                <li>Calculating Hand Values</li>
+                <li>Determining the winner</li>
+            </ul>
+        <h4>User Interaction</h4>
+            <ul>
+                <li>Buttons (Hitting and Standing)</li>
+                <li>Displaying Cards</li>
+                <li>Game Messages</li>
+            </ul>
+        <h4>API Integration</h4>
+            <p>Explain the integration of a card API (Deck of Cards API) 
+                to fetch and display the card images in the game.
+            </p>
+        <h4>Game Flow</h4>
+            <ol>
+                <li>The initial game loads immediately upon the window loading</li>
+                <li>The dealer is dealt one card and the player is dealt two</li>
+                <li>
+                    The player has to decide whether to hit or not
+                    <ul>
+                        <li>If the player hits another card is drawn 
+                            from the deck and their hand total is increased.
+                            <ul>
+                                <li>If the player gets 21 then they win</li>
+                                <li>If the player goes over 21 then the lose (or bust)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            If the player stands then the dealer begins to draw cards. The dealer draws until they reach 17 or 21.
+                            <ul>
+                                <li>If the dealer is at 17 they stay</li>
+                                <li>If the dealer is at 21 they win</li>
+                                <li>If the dealer is under 17 they must draw until they are over 17</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>After the dealer recieves all their cards and they havent bust or hit 21 then the players hand and the 
+                    dealers hands are compared. Whichever one has the most value wins.
+                </li>
+                <li>If the player wishes to play again they click the new game button</li>
+            </ol>
+        <h4>Conclusion</h4>
+            <p>
+                Mastering the basics of blackjack is a rewarding journey for both casual 
+                players and enthusiasts. By understanding the rules, implementing effective
+                strategies, and leveraging practical tips, you can elevate your blackjack skills
+                and increase your chances of success at the tables. Additionally, the showcased
+                implementation of a blackjack game provides a hands-on demonstration of the game 
+                mechanics and serves as an enjoyable learning experience. So, embrace the excitement
+                of blackjack, apply your knowledge, and aim for that winning hand!
+            </p>
+    </div>
 </body>    
