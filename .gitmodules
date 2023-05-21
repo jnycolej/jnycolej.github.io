@@ -4,3 +4,6 @@
 [submodule "BrowserApp"]
 	path = BrowserApp
 	url = https://github.com/jnycolej/calculator
+[submodule "SpotRoulette"]
+	path = SpotRoulette
+	url = https://github.com/jnycolej/SpotRoulette
