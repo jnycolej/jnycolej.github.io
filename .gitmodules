@@ -7,6 +7,3 @@
 [submodule "SpotRoulette"]
 	path = SpotRoulette
 	url = https://github.com/jnycolej/SpotRoulette
-[submodule "InteractiveStory"]
-	path = InteractiveStory
-	url = https://github.com/jnycolej/InteractiveStory
