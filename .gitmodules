@@ -7,3 +7,6 @@
 [submodule "InteractiveStory"]
 	path = InteractiveStory
 	url = https://github.com/jnycolej/InteractiveStory
+[submodule "Games/baseball"]
+	path = Games/baseball
+	url = https://github.com/jnycolej/grandslam.git
