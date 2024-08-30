@@ -10,3 +10,6 @@
 [submodule "Games/baseball"]
 	path = Games/baseball
 	url = https://github.com/jnycolej/grandslam.git
+[submodule "football-game"]
+	path = football-game
+	url = https://github.com/jnycolej/football-game/
